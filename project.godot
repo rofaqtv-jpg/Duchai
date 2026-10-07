@@ -1,0 +1,15 @@
+config_version=5
+
+[application]
+config/name="Open World Mobile"
+run/main_scene="res://scenes/main.tscn"
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.36, 0.62, 0.82, 1)
