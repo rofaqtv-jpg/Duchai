@@ -10,7 +10,11 @@ const TURN_RATE := 1.5
 
 func _physics_process(delta: float) -> void:
 	var target_speed := drive_input.y * MAX_SPEED
-	current_speed = move_toward(current_speed, target_speed, ACCELERATION * delta)
+	current_speed = move_toward(
+		current_speed,
+		target_speed,
+		ACCELERATION * delta
+	)
 
 	if is_on_floor():
 		if velocity.y < 0.0:
@@ -19,7 +23,11 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= GRAVITY * delta
 
 	if abs(current_speed) > 0.4:
-		var steering_factor := clamp(abs(current_speed) / MAX_SPEED, 0.2, 1.0)
+		var steering_factor := clamp(
+			abs(current_speed) / MAX_SPEED,
+			0.2,
+			1.0
+		)
 		rotation.y -= (
 			drive_input.x
 			* TURN_RATE
