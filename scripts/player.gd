@@ -30,6 +30,10 @@ func _physics_process(delta: float) -> void:
 
 	if direction.length() > 0.01:
 		var target_yaw := atan2(-direction.x, -direction.z)
-		rotation.y = lerp_angle(rotation.y, target_yaw, min(1.0, delta * 10.0))
+		rotation.y = lerp_angle(
+			rotation.y,
+			target_yaw,
+			min(1.0, delta * 10.0)
+		)
 
 	move_and_slide()
